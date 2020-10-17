@@ -95,6 +95,7 @@ public class LoginController {
 	public ResponseEntity<MainResponseDTO<AuthNResponse>> sendOTP(@Validated @RequestBody MainRequestDTO<OtpRequestDTO> userOtpRequest, @ApiIgnore Errors errors ){
 		log.info("sessionId", "idType", "id",
 				"In sendOtp method of Login controller for sending Otp ");
+		System.out.println("-----------------------------------------------"+userOtpRequest.getId());
 		loginValidator.validateId(SENDOTP, userOtpRequest.getId(), errors);
 		DataValidationUtil.validate(errors,SENDOTP);
 		return ResponseEntity.status(HttpStatus.OK).body(loginService.sendOTP(userOtpRequest));

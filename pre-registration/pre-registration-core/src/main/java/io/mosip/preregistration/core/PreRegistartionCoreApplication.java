@@ -2,6 +2,7 @@ package io.mosip.preregistration.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 
@@ -26,6 +27,9 @@ import org.springframework.context.annotation.FilterType;
 						"io\\.mosip\\.kernel\\.crypto\\..*",
 						"io\\.mosip\\.kernel\\.clientcrypto\\..*",
 				}) })
+//@ComponentScan({
+//	"io.mosip.kernel.core."
+//})
 public class PreRegistartionCoreApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PreRegistartionCoreApplication.class, args);

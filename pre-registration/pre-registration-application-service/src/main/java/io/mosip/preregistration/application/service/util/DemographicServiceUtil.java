@@ -472,6 +472,8 @@ public class DemographicServiceUtil {
 	 */
 	public String getJson(String filename) {
 		try {
+			//INFO AV
+			System.out.println("-----------------------------------------------------------------------"+filename);
 			String configServerUri = env.getProperty("spring.cloud.config.uri");
 			String configLabel = env.getProperty("spring.cloud.config.label");
 			String configProfile = env.getProperty("spring.profiles.active");
@@ -479,6 +481,8 @@ public class DemographicServiceUtil {
 			StringBuilder uriBuilder = new StringBuilder();
 			uriBuilder.append(configServerUri + "/").append(configAppName + "/").append(configProfile + "/")
 					.append(configLabel + "/").append(filename);
+			//INFO AV
+			System.out.println("-----------------------------------------------------------------------"+uriBuilder.toString());
 			// uriBuilder.append(
 			// "http://104.211.212.28:51000/preregistration/dev/master/PreRegistrationIdentitiyMapping.json");
 			log.info("sessionId", "idType", "id", " URL in demographic service util of getJson " + uriBuilder);
@@ -487,6 +491,8 @@ public class DemographicServiceUtil {
 			log.debug("sessionId", "idType", "id", ExceptionUtils.getStackTrace(ex));
 			log.error("sessionId", "idType", "id",
 					"In pre-registration service util of getPreregistrationIdentityJson- " + ex.getMessage());
+			//INFO AV
+			System.out.println("-----------------------------------------------------------------------");
 			throw new SystemFileIOException(DemographicErrorCodes.PRG_PAM_APP_018.getCode(),
 					DemographicErrorMessages.UBALE_TO_READ_IDENTITY_JSON.getMessage(), null);
 		}

@@ -11,6 +11,11 @@ import io.mosip.kernel.core.templatemanager.spi.TemplateManagerBuilder;
  */
 @Configuration
 public class TemplateConfiguration {
+
+	/*
+	To resolve the issue component required a bean of type 'java.lang.String' that could not be found
+	 */
+
 	@Bean
 	public TemplateManager templateManager(TemplateManagerBuilder templateManagerBuilder){
 	   

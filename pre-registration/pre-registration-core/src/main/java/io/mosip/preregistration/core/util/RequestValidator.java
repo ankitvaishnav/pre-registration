@@ -52,6 +52,7 @@ public class RequestValidator extends BaseValidator implements Validator {
 	public void validateId(String operation, String requestId, Errors errors) {
 		if (Objects.nonNull(requestId)) {
 			if (!requestId.equals(id.get(operation))) {
+				System.out.println("-------------------------------"+id.get(operation));
 				mosipLogger.error("", "", "validateId", "\n" + "Id is not correct");
 				errors.rejectValue(ID, ErrorCodes.PRG_CORE_REQ_001.getCode(),
 						String.format(ErrorMessages.INVALID_REQUEST_ID.getMessage(), ID));
